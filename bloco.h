@@ -1,9 +1,6 @@
 #ifndef BLOCO_H
 #define BLOCO_H
 
-#include <stdio.h>
-#include <ncurses.h>
-
 enum BlocoTipo
  (VISIVEL, INVISIVEL);
 
