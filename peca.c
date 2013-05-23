@@ -5,6 +5,7 @@
 
 #define NIL -1
 
+///Função interna que faz a atualização das coordenadas internas dos blocos das peças baseando-se em seu tipo. Não deve ser utilizada externamente, então não foi declarada no peca.h.
 void atualiza_blocos(Peca* peca, int x=NIL, int y=NIL)
 {
 	switch(peca->tipo)
