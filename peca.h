@@ -2,9 +2,9 @@
 #define PECA_H
 
 #ifdef SERV_PECA
-#define EXT_MOD_PECA
-#else
 #define EXT_MOD_PECA extern
+#else
+#define EXT_MOD_PECA
 #endif
 
 #define TOT_PECA_TIPOS 1
