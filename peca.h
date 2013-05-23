@@ -29,7 +29,7 @@ void peca_move_x(Peca* peca, int x);
 /// Mova a peça para a posição y.
 void peca_move_y(Peca* peca, int y);
 /// Mostra a peça na tela.
-void mostra_peca(Peca* p);
+void mostra_peca(Peca* p, Tela *t);
 /// Prende a peça no fim da tela.
 void prende_peca(Peca* p, Tela* t);
 

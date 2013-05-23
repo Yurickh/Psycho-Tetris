@@ -69,10 +69,10 @@ void peca_move_y (Peca* peca, int y)
 	move_blocos_peca(peca, NIL, y);
 }
 
-void mostra_peca(Peca* p)
+void mostra_peca(Peca* p, Tela* t)
 {
 	for(int i=0; i<4; ++i)
-		mostra_bloco(&(p->bloco[i]));
+		t[p->bloco[i].x][p->bloco[i].y].tipo = VISIVEL;
 }
 
 void prende_peca(Peca* p, Tela* t)
