@@ -1,6 +1,13 @@
 #ifndef BLOCO_H
 #define BLOCO_H
 
+#ifdef SERV_BLOCO
+#define EXT_MOD_BLOCO
+#else
+#define EXT_MOD_BLOCO extern
+#endif
+
+
 enum BlocoTipo
  (VISIVEL, INVISIVEL);
 
