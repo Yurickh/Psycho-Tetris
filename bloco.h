@@ -4,14 +4,13 @@
 #include <stdio.h>
 #include <ncurses.h>
 
-enum TipoBloco
- (visivel, invisivel);
+enum BlocoTipo
+ (VISIVEL, INVISIVEL);
 
 struct Bloco{
 	int x;
 	int y;
 	BlocoTipo tipo;
-	char vet[2];
 };
 
 typedef struct Bloco Bloco;
