@@ -40,7 +40,6 @@ Peca nova_peca (Tela* tela, int x, int y)
 	for(int i=0;i<4;i++) 
 		peca.bloco = novo_bloco(0, 0, INVISIVEL);
 
-	srand(time(NULL));
 	peca.tipo = rand() % TOT_PECA_TIPOS;
 
 	atualiza_blocos(&peca, x, y);
