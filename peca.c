@@ -6,7 +6,7 @@
 #define NIL -1
 
 ///Função interna que faz a atualização das coordenadas internas dos blocos das peças baseando-se em seu tipo. Não deve ser utilizada externamente, então não foi declarada no peca.h.
-void atualiza_blocos(Peca* peca, int x=NIL, int y=NIL)
+void move_blocos_peca(Peca* peca, int x=NIL, int y=NIL)
 {
 	switch(peca->tipo)
 	{
@@ -31,6 +31,15 @@ void atualiza_blocos(Peca* peca, int x=NIL, int y=NIL)
 	}
 }
 
+int peca_touching(Peca* p, Tela* t)
+{
+	int result = 0;
+	for(int i = 0; i<4; ++i)
+		if(t[p->x][p->y + 1]->tipo == VISIVEL)
+			result++;
+	return result;
+}
+
 Peca nova_peca (Tela* tela, int x, int y)
 {
 	Peca peca;
@@ -43,7 +52,7 @@ Peca nova_peca (Tela* tela, int x, int y)
 
 	peca.tipo = rand() % TOT_PECA_TIPOS;
 
-	atualiza_blocos(&peca, x, y);
+	move_blocos_peca(&peca, x, y);
 	
 	return peca;
 }
@@ -51,13 +60,25 @@ Peca nova_peca (Tela* tela, int x, int y)
 void peca_move_x (Peca* peca, int x)
 {
 	peca->x = x;
-	atualiza_blocos(peca, x, NIL);
+	move_blocos_peca(peca, x, NIL);
 }
 
 void peca_move_y (Peca* peca, int y)
 {
 	peca->y = y;
-	atualiza_blocos(peca, NIL, y);
+	move_blocos_peca(peca, NIL, y);
 }
 
+void mostra_peca(Peca* p)
+{
+	for(int i=0; i<4; ++i)
+		mostra_bloco(&(p->bloco[i]));
+}
 
+void prende_peca(Peca* p, Tela* t)
+{
+	while(!peca_touching(p, t))
+		peca_move_y(p, p->y+1);
+	for(int i=0;i<4;++i)
+		t[p->x, p->y]->tipo = VISIVEL;	
+}

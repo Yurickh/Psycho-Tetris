@@ -8,7 +8,8 @@
 #endif
 
 #define TOT_PECA_TIPOS 1
-#define QUADRADO 0
+enum Tipo
+( QUADRADO );
 
 /**Estrutura básica de um peça.
 Cada peça deve conter suas próprias coordenadas e as coordenadas de cada um de seus blocos.
@@ -17,7 +18,7 @@ typedef struct
 {
 	int x;
 	int y;
-	int tipo;
+	Tipo tipo;
 	Bloco bloco[4];
 } Peca;
 
