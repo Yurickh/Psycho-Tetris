@@ -1,8 +1,12 @@
 #ifndef BLOCO_H
 #define BLOCO_H
 
-#include <stdio.h>
-#include <ncurses.h>
+#ifdef SERV_BLOCO
+#define EXT_MOD_BLOCO
+#else
+#define EXT_MOD_BLOCO extern
+#endif
+
 
 enum BlocoTipo
  (VISIVEL, INVISIVEL);
