@@ -35,7 +35,7 @@ int peca_touching(Peca* p, Tela* t)
 {
 	int result = 0;
 	for(int i = 0; i<4; ++i)
-		if(t[p->x][p->y + 1]->tipo == VISIVEL)
+		if(t->bloco[p->x][p->y + 1]->tipo == VISIVEL)
 			result++;
 	return result;
 }
@@ -72,7 +72,7 @@ void peca_move_y (Peca* peca, int y)
 void mostra_peca(Peca* p, Tela* t)
 {
 	for(int i=0; i<4; ++i)
-		t[p->bloco[i].x][p->bloco[i].y].tipo = VISIVEL;
+		t->bloco[p->bloco[i].x][p->bloco[i].y].tipo = VISIVEL;
 }
 
 void prende_peca(Peca* p, Tela* t)
@@ -80,5 +80,5 @@ void prende_peca(Peca* p, Tela* t)
 	while(!peca_touching(p, t))
 		peca_move_y(p, p->y+1);
 	for(int i=0;i<4;++i)
-		t[p->x, p->y]->tipo = VISIVEL;	
+		t->bloco[p->x, p->y]->tipo = VISIVEL;	
 }
