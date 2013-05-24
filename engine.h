@@ -1,14 +1,14 @@
-#ifdef ENGINE_H
-#define EGINE_H
+#ifndef ENG_H
+#define ENG_H
 
-#ifdef SERV_ENGINE
-#define EXT_MOD_ENGINE
+#ifdef SERV_ENG
+#define EXT_MOD_ENG
 #else
-#define EXT_MOD_ENGINE extern
+#define EXT_MOD_ENG extern
 #endif
 
 #include <ncurses.h>
-#include <stdio.h>
+#include <stdlib.h>
 
 void inicializa_ncurses();
 void finaliza_ncurses();

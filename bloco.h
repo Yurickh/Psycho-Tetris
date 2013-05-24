@@ -7,9 +7,12 @@
 #define EXT_MOD_BLOCO extern
 #endif
 
+#include <ncurses.h>
 
-enum BlocoTipo
- (VISIVEL, INVISIVEL);
+enum Tipo
+ {VISIVEL, INVISIVEL};
+
+typedef enum Tipo BlocoTipo;
 
 struct Bloco{
 	int x;

@@ -1,3 +1,5 @@
+#include "engine.h"
+
 #define PRENDE 10  /*um enter*/
 #define CIMA		259
 #define BAIXO		258
@@ -13,7 +15,7 @@ void inicializa_ncurses()
 	getmaxyx(stdscr, max_y, max_x);
 	if ((max_y != 24) || (max_x != 80)) {
 		endwin();
-		printf("Redimensione o terminal para 80 colunas por 24 linhas.\n");
+		printf("Redimensione o terminal para __ colunas por __ linhas.\n");
 		exit(0);
 	}
 	cbreak();
@@ -38,4 +40,8 @@ int pega_input(int input)
 		case PRENDE: return PRENDE ; break;
 	}
 	return 0;
+}
+int main()
+{
+return 0;
 }

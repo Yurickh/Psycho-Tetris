@@ -7,12 +7,16 @@ void mostra_bloco(Bloco* b)
 }
 
 
-Bloco novo_bloco(it x, int y, BlocoTipo bTipo)
+Bloco novo_bloco(int x, int y, BlocoTipo bTipo)
 {
 	Bloco bloco;
 	bloco.x = x;
 	bloco.y = y;
 	bloco.tipo = bTipo;
 
-	retun bloco;
+	return bloco;
+}
+int main()
+{
+return 0;
 }
