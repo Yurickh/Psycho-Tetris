@@ -77,7 +77,7 @@ void prende_peca(Peca* p, Tela* t)
 {
 	int i;
 	while(!peca_touching(p, t))
-		peca_move_y(p, p->y+1);
+		peca_move_y(p, 1);
 	for(i=0;i<4;++i)
 		t->bloco[p->x][p->y].tipo = VISIVEL;
 }
