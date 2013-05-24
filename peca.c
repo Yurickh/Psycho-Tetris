@@ -18,7 +18,7 @@ EXT_MOD_PECA int peca_touching(Peca* p, Tela* t)
 {
 	int result = 0, i;
 	for(i = 0; i<4; ++i)
-		if(t->bloco[p->x][p->y + 1].tipo != INVISIBLE)
+		if((t->bloco[p->bloco[i].x][p->bloco[i].y + 1].tipo != INVISIVEL) || p->bloco[i].y + 1 >= TELA_ALTURA)
 			result++;
 	return result;
 }
@@ -27,16 +27,17 @@ EXT_MOD_PECA Peca nova_peca (Tela* tela, int x, int y)
 {
 	Peca peca;
 	int i;
+	Tipo tipo;
 
 	peca.x = x;
 	peca.y = y;
 
-	peca.tipo = rand() % TOT_PECA_TIPOS;
+	tipo = rand() % TOT_PECA_TIPOS;
 
 	for(i=0;i<4;i++) 
-		peca.bloco[i] = novo_bloco(0, 0, peca.tipo);
+		peca.bloco[i] = novo_bloco(0, 0, tipo);
 
-	switch(peca.tipo)
+	switch(tipo)
 	{
 		case QUADRADO:
 			peca.bloco[0].x = x;
@@ -76,8 +77,11 @@ EXT_MOD_PECA void mostra_peca(Peca* p)
 EXT_MOD_PECA void prende_peca(Peca* p, Tela* t)
 {
 	int i;
+	Tipo tipo;
+	tipo = p->bloco->tipo;
+
 	while(!peca_touching(p, t))
 		peca_move_y(p, 1);
 	for(i=0;i<4;++i)
-		t->bloco[p->bloco[i].x][p->bloco[i].y].tipo = p->tipo;
+		t->bloco[p->bloco[i].x][p->bloco[i].y].tipo = tipo;
 }
