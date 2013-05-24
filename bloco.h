@@ -22,7 +22,7 @@ struct Bloco{
 
 typedef struct Bloco Bloco;
 
-Bloco novo_bloco(int, int, BlocoTipo);
-void mostra_bloco(Bloco*);
+EXT_MOD_BLOCO Bloco novo_bloco(int, int, BlocoTipo);
+EXT_MOD_BLOCO void mostra_bloco(Bloco*);
 
 #endif
