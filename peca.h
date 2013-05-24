@@ -26,9 +26,11 @@ typedef struct
 
 /// Cria uma nova peça da forma quadrada.
 Peca nova_peca(Tela* tela, int x, int y);
-/// Move a peça para a posição x.
+/// Verifica se a peca em questão está tocando inferiormente alguma outra;
+int peca_touching(Peca* p, Tela* t);
+/// Move a peça x unidades na horizontal.
 void peca_move_x(Peca* peca, int x);
-/// Mova a peça para a posição y.
+/// Move a peça y unidades na vertical.
 void peca_move_y(Peca* peca, int y);
 /// Mostra a peça na tela.
 void mostra_peca(Peca* p);
