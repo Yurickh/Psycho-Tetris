@@ -11,6 +11,11 @@ void inicializa_ncurses()
 	int max_y, max_x;
 
 	initscr();
+	start_color();
+
+	
+	init_pair(1,COLOR_RED, COLOR_BLACK); /*cor bloco*/
+	init_pair(2,COLOR_BLUE, COLOR_BLACK); /*cor tela*/
 
 	getmaxyx(stdscr, max_y, max_x);
 	if ((max_y != 24) || (max_x != 80)) {
