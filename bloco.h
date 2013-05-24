@@ -8,8 +8,8 @@
 #endif
 
 
-enum BlocoTipo
- (VISIVEL, INVISIVEL);
+typedef enum
+{VISIVEL, INVISIVEL} BlocoTipo;
 
 struct Bloco{
 	int x;

@@ -6,7 +6,7 @@
 #define NIL -1
 
 ///Função interna que faz a atualização das coordenadas internas dos blocos das peças baseando-se em seu tipo. Não deve ser utilizada externamente, então não foi declarada no peca.h.
-void move_blocos_peca(Peca* peca, int x=NIL, int y=NIL)
+void move_blocos_peca(Peca* peca, int x, int y)
 {
 	switch(peca->tipo)
 	{
@@ -35,7 +35,7 @@ int peca_touching(Peca* p, Tela* t)
 {
 	int result = 0;
 	for(int i = 0; i<4; ++i)
-		if(t->bloco[p->x][p->y + 1]->tipo == VISIVEL)
+		if(t->bloco[p->x][p->y + 1].tipo == VISIVEL)
 			result++;
 	return result;
 }
@@ -48,7 +48,7 @@ Peca nova_peca (Tela* tela, int x, int y)
 	peca.y = y;
 
 	for(int i=0;i<4;i++) 
-		peca.bloco = novo_bloco(0, 0, INVISIVEL);
+		peca.bloco[i] = novo_bloco(0, 0, INVISIVEL);
 
 	peca.tipo = rand() % TOT_PECA_TIPOS;
 
@@ -69,10 +69,10 @@ void peca_move_y (Peca* peca, int y)
 	move_blocos_peca(peca, NIL, y);
 }
 
-void mostra_peca(Peca* p, Tela* t)
+void mostra_peca(Peca* p)
 {
 	for(int i=0; i<4; ++i)
-		t->bloco[p->bloco[i].x][p->bloco[i].y].tipo = VISIVEL;
+		mostra_bloco(&(p->bloco[i]));
 }
 
 void prende_peca(Peca* p, Tela* t)

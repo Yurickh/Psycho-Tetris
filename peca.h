@@ -7,9 +7,11 @@
 #define EXT_MOD_PECA extern
 #endif
 
+#include "tela.h"
+
 #define TOT_PECA_TIPOS 1
-enum Tipo
-( QUADRADO );
+typedef enum 
+{ QUADRADO } Tipo;
 
 /**Estrutura básica de um peça.
 Cada peça deve conter suas próprias coordenadas e as coordenadas de cada um de seus blocos.
@@ -29,7 +31,7 @@ void peca_move_x(Peca* peca, int x);
 /// Mova a peça para a posição y.
 void peca_move_y(Peca* peca, int y);
 /// Mostra a peça na tela.
-void mostra_peca(Peca* p, Tela *t);
+void mostra_peca(Peca* p);
 /// Prende a peça no fim da tela.
 void prende_peca(Peca* p, Tela* t);
 

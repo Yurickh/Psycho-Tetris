@@ -1,3 +1,5 @@
+#include <ncurses.h>
+
 void inicializa_ncurses()
 {
 	initscr();
