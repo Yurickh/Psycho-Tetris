@@ -4,6 +4,16 @@
 #define ESQUERDA	260
 #define DIREITA		261
 
+#define STANDARD 10
+
+#include <stdlib.h>
+#include <ncurses.h>
+
+void set_color(int id)
+{
+	attron(COLOR_PAIR(id+1));
+}
+
 void inicializa_ncurses()
 {
 	int max_y, max_x;
@@ -13,7 +23,7 @@ void inicializa_ncurses()
 	getmaxyx(stdscr, max_y, max_x);
 	if ((max_y != 24) || (max_x != 80)) {
 		endwin();
-		printf("Redimensione o terminal para 80 colunas por 24 linhas.\n");
+		printf("Erro D':\nRedimensione o terminal para 80 colunas por 24 linhas.\n");
 		exit(0);
 	}
 	cbreak();
@@ -27,15 +37,7 @@ void finaliza_ncurses()
 	endwin();
 }
 
-int pega_input(int input)
+int pega_input(int espera)
 {
-	switch (input)
-	{
-		case DIREITA: return KEY_RIGHT ; break;
-		case ESQUERDA: return KEY_LEFT ; break;
-		case BAIXO: return KEY_DOWN ; break;
-		case CIMA: return KEY_UP ; break;
-		case PRENDE: return PRENDE ; break;
-	}
-	return 0;
+	return getch();
 }

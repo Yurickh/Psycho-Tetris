@@ -9,7 +9,7 @@
 
 
 typedef enum
-{VISIVEL, INVISIVEL} BlocoTipo;
+{INVISIVEL, QUADRADO} BlocoTipo;
 
 struct Bloco{
 	int x;
