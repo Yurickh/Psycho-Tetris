@@ -29,13 +29,5 @@ void finaliza_ncurses()
 
 int pega_input(int input)
 {
-	switch (input)
-	{
-		case DIREITA: return 1 ; break;
-		case ESQUERDA: return 2 ; break;
-		case BAIXO: return 3 ; break;
-		case ROTACIONA: return 4 ; break;
-		case PRENDE: return 5 ; break;
-	}
-	return 0;
+	return getch();
 }
