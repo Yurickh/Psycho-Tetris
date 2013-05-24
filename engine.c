@@ -1,8 +1,8 @@
-#define DIREITA 261
-#define BAIXO 258
-#define ESQUERDA 260
 #define PRENDE 10  /*um enter*/
-#define ROTACIONA 'r'
+#define CIMA		259
+#define BAIXO		258
+#define ESQUERDA	260
+#define DIREITA		261
 
 void inicializa_ncurses()
 {
@@ -29,5 +29,13 @@ void finaliza_ncurses()
 
 int pega_input(int input)
 {
-	return getch();
+	switch (input)
+	{
+		case DIREITA: return KEY_RIGHT ; break;
+		case ESQUERDA: return KEY_LEFT ; break;
+		case BAIXO: return KEY_DOWN ; break;
+		case CIMA: return KEY_UP ; break;
+		case PRENDE: return PRENDE ; break;
+	}
+	return 0;
 }
