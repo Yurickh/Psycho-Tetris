@@ -7,6 +7,7 @@
 #define EXT_MOD_PECA extern
 #endif
 
+#define SERV_TELA
 #include "tela.h"
 
 #define TOT_PECA_TIPOS 1

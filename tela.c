@@ -1,7 +1,9 @@
+#define SERV_TELA
 #include "tela.h"
+#define SERV_PECA
 #include "peca.h"
 
-Tela nova_tela () {
+EXT_MOD_TELA Tela nova_tela () {
 	Tela t;
 	int i, j;
 
@@ -18,7 +20,7 @@ Tela nova_tela () {
 	return t;
 }
 
-void mostra_tela (Tela* t){
+EXT_MOD_TELA void mostra_tela (Tela* t){
 
 	int i, j;
 

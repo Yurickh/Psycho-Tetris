@@ -10,8 +10,8 @@
 #define TELA_LARGURA 10
 #define TELA_ALTURA 20
 
-#include <stdio.h>
 #include <stdlib.h>
+#define SERV_BLOCO
 #include "bloco.h"
 
 typedef struct

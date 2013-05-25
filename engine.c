@@ -4,14 +4,13 @@
 #define ESQUERDA	260
 #define DIREITA		261
 
-#define STANDARD 10
-
 #include <stdlib.h>
 #include <ncurses.h>
+#include "engine.h"
 
 void set_color(int id)
 {
-	attron(COLOR_PAIR(id+1));
+	attron(COLOR_PAIR(id));
 }
 
 void inicializa_ncurses()
@@ -23,7 +22,7 @@ void inicializa_ncurses()
 	getmaxyx(stdscr, max_y, max_x);
 	if ((max_y != 24) || (max_x != 80)) {
 		endwin();
-		printf("Erro D':\nRedimensione o terminal para 80 colunas por 24 linhas.\n");
+		printf("Erro ):\nRedimensione o terminal para 80 colunas por 24 linhas.\n");
 		exit(0);
 	}
 	cbreak();

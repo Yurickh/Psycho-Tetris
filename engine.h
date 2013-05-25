@@ -7,10 +7,12 @@
 #define EXT_MOD_ENGINE extern
 #endif
 
-void set_color(int);
-void inicializa_ncurses();
-void finaliza_ncurses();
-int pega_input(int);
+#define STANDARD 10
+
+EXT_MOD_ENGINE void set_color(int);
+EXT_MOD_ENGINE void inicializa_ncurses();
+EXT_MOD_ENGINE void finaliza_ncurses();
+EXT_MOD_ENGINE int pega_input(int);
 
 
 #endif

@@ -1,8 +1,11 @@
 #include <ncurses.h>
 #include "game.h"
 
-void start_game()
+EXT_MOD_GAME void start_game()
 {
-	printw("Game running");
-	refresh();
+	while(1)
+	{
+		printw("oi\n");
+		refresh();
+	}
 }

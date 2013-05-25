@@ -1,7 +1,8 @@
 #include "bloco.h"
+#define SERV_ENGINE
 #include "engine.h"
 
-void mostra_bloco(Bloco* b)
+EXT_MOD_BLOCO void mostra_bloco(Bloco* b)
 {
 	if(b->tipo != INVISIVEL)
 	{
@@ -12,7 +13,7 @@ void mostra_bloco(Bloco* b)
 }
 
 
-Bloco novo_bloco(int x, int y, BlocoTipo bTipo)
+EXT_MOD_BLOCO Bloco novo_bloco(int x, int y, BlocoTipo bTipo)
 {
 	Bloco bloco;
 	bloco.x = x;

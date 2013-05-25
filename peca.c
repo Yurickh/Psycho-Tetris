@@ -1,5 +1,6 @@
 #include <time.h>
 #include <stdlib.h>
+#define SERV_BLOCO
 #include "bloco.h"
 #include "peca.h"
 
@@ -27,12 +28,12 @@ EXT_MOD_PECA Peca nova_peca (Tela* tela, int x, int y)
 {
 	Peca peca;
 	int i;
-	Tipo tipo;
+	BlocoTipo tipo;
 
 	peca.x = x;
 	peca.y = y;
 
-	tipo = rand() % TOT_PECA_TIPOS;
+	tipo = 1 + rand() % TOT_PECA_TIPOS;
 
 	for(i=0;i<4;i++) 
 		peca.bloco[i] = novo_bloco(0, 0, tipo);
@@ -49,6 +50,8 @@ EXT_MOD_PECA Peca nova_peca (Tela* tela, int x, int y)
 			peca.bloco[1].y = y;
 			peca.bloco[2].y = y+1;
 			peca.bloco[3].y = y+1;
+		break;
+		default:
 		break;
 	}
 	
@@ -77,7 +80,7 @@ EXT_MOD_PECA void mostra_peca(Peca* p)
 EXT_MOD_PECA void prende_peca(Peca* p, Tela* t)
 {
 	int i;
-	Tipo tipo;
+	BlocoTipo tipo;
 	tipo = p->bloco->tipo;
 
 	while(!peca_touching(p, t))

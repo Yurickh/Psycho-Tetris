@@ -89,6 +89,8 @@ EXT_MOD_MENU int menu(char** options, int n_choices, char* title)
 	free_menu(menu);
 	for(i=0;i<n_choices;++i)
 		free_item(item[i]);
+	clear();
+	refresh();
 	
 	return p;
 }
