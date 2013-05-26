@@ -7,7 +7,7 @@ EXT_MOD_BLOCO void mostra_bloco(Bloco* b)
 	if(b->tipo != INVISIVEL)
 	{
 		set_color(b->tipo);
-		mvaddstr(b->y, b->x, "[]");
+		mvaddstr(b->y, (b->x)*2, "[]");
 		set_color(STANDARD);
 	}
 }

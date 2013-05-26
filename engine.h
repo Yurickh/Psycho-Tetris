@@ -7,8 +7,9 @@
 #define EXT_MOD_ENGINE extern
 #endif
 
-#define STANDARD 10
+#define STANDARD 0
 
+EXT_MOD_ENGINE int wait(void);
 EXT_MOD_ENGINE void set_color(int);
 EXT_MOD_ENGINE void inicializa_ncurses();
 EXT_MOD_ENGINE void finaliza_ncurses();

@@ -19,8 +19,12 @@ EXT_MOD_PECA int peca_touching(Peca* p, Tela* t)
 {
 	int result = 0, i;
 	for(i = 0; i<4; ++i)
-		if((t->bloco[p->bloco[i].x][p->bloco[i].y + 1].tipo != INVISIVEL) || p->bloco[i].y + 1 >= TELA_ALTURA)
+	{
+		if((t->bloco[p->bloco[i].y+1][p->bloco[i].x].tipo != INVISIVEL) || p->bloco[i].y + 1 >= TELA_ALTURA)
 			result++;
+		if(t->bloco[p->bloco[i].y][p->bloco[i].x].tipo != INVISIVEL || p->bloco[i].y < 0)
+			result++;
+	}
 	return result;
 }
 
@@ -84,7 +88,10 @@ EXT_MOD_PECA void prende_peca(Peca* p, Tela* t)
 	tipo = p->bloco->tipo;
 
 	while(!peca_touching(p, t))
+	{
+		wait();
 		peca_move_y(p, 1);
+	}
 	for(i=0;i<4;++i)
-		t->bloco[p->bloco[i].x][p->bloco[i].y].tipo = tipo;
+		t->bloco[p->bloco[i].y][p->bloco[i].x].tipo = tipo;
 }

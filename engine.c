@@ -1,12 +1,21 @@
-#define PRENDE 10  /*um enter*/
-#define CIMA		259
-#define BAIXO		258
-#define ESQUERDA	260
-#define DIREITA		261
-
 #include <stdlib.h>
 #include <ncurses.h>
+#include <time.h>
 #include "engine.h"
+
+#define FPS 10
+
+int wait()
+{
+	static clock_t t0 = 0;
+	static clock_t t1;
+	clock_t num = CLOCKS_PER_SEC/FPS;
+	
+	t1 = clock() - t0;
+	if (t1 < num)
+		usleep(num - t1);
+	t0 = clock();
+}
 
 void set_color(int id)
 {
@@ -29,6 +38,9 @@ void inicializa_ncurses()
 	noecho();
 	timeout(0);
 	curs_set(0);
+
+	start_color();
+	init_pair(1, COLOR_RED, COLOR_BLACK); //Quadrado
 }
 
 void finaliza_ncurses()
