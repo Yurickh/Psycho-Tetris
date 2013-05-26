@@ -62,6 +62,11 @@ EXT_MOD_GAME void start_game()
 					peca_move_x(peca, 1);
 				break;
 
+				case 'Q':
+				case 'q':
+					end = 1;
+				break;
+
 				case ENTER:
 					prende_peca(peca, tela);
 				break;
@@ -77,5 +82,5 @@ EXT_MOD_GAME void start_game()
 		if(endgame(tela))
 			end = 1;
 	}
-
+	
 }
