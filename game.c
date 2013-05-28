@@ -45,26 +45,32 @@ EXT_MOD_GAME void start_game()
 			mostra_tela(tela);
 			mostra_peca(peca);
 			refresh();
-			in = pega_input(wait());
+			in = pega_input(0);
+
+			peca_move_y(peca,1);
 
 			switch(in)
 			{
-				default:
-				case KEY_DOWN:
-					peca_move_y(peca, 1);
+				case 's':
+					peca_move_y(peca, 2);
 				break;
 
-				case KEY_LEFT:
+				case 'a':
 					peca_move_x(peca, -1);
 				break;
 
-				case KEY_RIGHT:
+				case 'd':
 					peca_move_x(peca, 1);
 				break;
 
 				case ENTER:
 					prende_peca(peca, tela);
 				break;
+				
+				case 'q': 
+				case 'Q':
+					end = 1;
+				break;			
 			}
 			clear();
 			if(peca_touching(peca, tela))
