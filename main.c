@@ -9,8 +9,7 @@ int main()
 {
 	char* options[] = {
 			"Jogar",
-			"Sair",
-			"Bankai"
+			"Sair"
 			};
 
 	char title[] = 
@@ -19,7 +18,7 @@ int main()
 	===========================================================";
 
 	inicializa_ncurses();
-	if(!menu(options, 3, title))
+	if(!menu(options, 2, title))
 		start_game();
 
 	finaliza_ncurses();

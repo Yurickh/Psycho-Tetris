@@ -2,12 +2,14 @@
 #include <time.h>
 #define SERV_ENGINE
 #include "engine.h"
+#define SERV_TELA
 #include "tela.h"
 #define SERV_PECA
 #include "peca.h"
 #include "game.h"
 
 #define ENTER 10
+#define ESC 27
 
 int endgame(Tela* t)
 {
@@ -35,7 +37,7 @@ EXT_MOD_GAME void start_game()
 
 	while(!end)
 	{
-		*peca = nova_peca(tela, 5, 0);
+		*peca = nova_peca(tela, TELA_LARGURA/2, 0);
 
 		if(peca_touching(peca, tela))
 			break;
@@ -51,14 +53,17 @@ EXT_MOD_GAME void start_game()
 
 			switch(in)
 			{
+				case 'S':
 				case 's':
 					peca_move_y(peca, 2);
 				break;
 
+				case 'A':
 				case 'a':
 					peca_move_x(peca, -1);
 				break;
 
+				case 'D':
 				case 'd':
 					peca_move_x(peca, 1);
 				break;
@@ -70,7 +75,11 @@ EXT_MOD_GAME void start_game()
 				case 'q': 
 				case 'Q':
 					end = 1;
-				break;			
+				break;
+
+				case ESC:
+					while(getch() != ESC);
+				break;		
 			}
 			clear();
 			if(peca_touching(peca, tela))
