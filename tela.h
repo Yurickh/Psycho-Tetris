@@ -9,6 +9,8 @@
 
 #define TELA_LARGURA 10
 #define TELA_ALTURA 20
+#define OFFSET_X_TELA 1
+#define OFFSET_Y_TELA 1
 
 #include <stdlib.h>
 #define SERV_BLOCO

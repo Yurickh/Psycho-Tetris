@@ -5,11 +5,11 @@
 
 #define FPS 10
 
-int wait()
+int wait(int fps)
 {
 	static clock_t t0 = 0;
 	static clock_t t1;
-	clock_t num = CLOCKS_PER_SEC/FPS;
+	clock_t num = CLOCKS_PER_SEC/fps;
 	
 	t1 = clock() - t0;
 	if (t1 < num)
@@ -50,5 +50,6 @@ void finaliza_ncurses()
 
 int pega_input(int espera)
 {
+	wait(FPS);
 	return getch();
 }

@@ -9,16 +9,17 @@ int main()
 {
 	char* options[] = {
 			"Jogar",
-			"Sair"
+			"Sair",
+			"Bankai"
 			};
 
 	char title[] = 
-"===========================================================\n\
-PSYCHO TETRIS MEGA BETA\n\
-===========================================================";
+"	===========================================================\n\
+			PSYCHO TETRIS MEGA BETA\n\
+	===========================================================";
 
 	inicializa_ncurses();
-	if(!menu(options, 2, title))
+	if(!menu(options, 3, title))
 		start_game();
 
 	finaliza_ncurses();

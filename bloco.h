@@ -1,3 +1,5 @@
+/**Definição de servidor.
+Define o servidor de Bloco que sera usado para formar a tela e as peças.*/
 #ifndef BLOCO_H
 #define BLOCO_H
 
@@ -20,7 +22,7 @@ struct Bloco{
 
 typedef struct Bloco Bloco;
 
-EXT_MOD_BLOCO Bloco novo_bloco(int, int, BlocoTipo);
-EXT_MOD_BLOCO void mostra_bloco(Bloco*);
+EXT_MOD_BLOCO Bloco novo_bloco(int, int, BlocoTipo);//!<Função que cria bloco
+EXT_MOD_BLOCO void mostra_bloco(Bloco*);//!<Função que mostra os blocos
 
 #endif
