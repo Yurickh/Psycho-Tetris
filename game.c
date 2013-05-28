@@ -47,19 +47,31 @@ EXT_MOD_GAME void start_game()
 			refresh();
 			in = pega_input(wait());
 
+			peca_move_y(peca, 1);
+
 			switch(in)
 			{
-				default:
-				case KEY_DOWN:
+				case 's':
+				case 'S':
 					peca_move_y(peca, 1);
 				break;
 
-				case KEY_LEFT:
-					peca_move_x(peca, -1);
+				case 'a':
+				case 'A':
+					if(peca->x-1 >= 0)
+						peca_move_x(peca, -1);
 				break;
 
-				case KEY_RIGHT:
-					peca_move_x(peca, 1);
+				case 'd':
+				case 'D':
+				{
+					int i, num=0;
+					for(i=0;i<4; ++i)
+						if(peca->bloco[i].x+1 >= TELA_LARGURA)
+							++num;
+					if(!num)
+						peca_move_x(peca, 1);
+				}
 				break;
 
 				case 'Q':
@@ -82,5 +94,5 @@ EXT_MOD_GAME void start_game()
 		if(endgame(tela))
 			end = 1;
 	}
-	
+
 }

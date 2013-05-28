@@ -90,7 +90,11 @@ EXT_MOD_PECA void prende_peca(Peca* p, Tela* t)
 	while(!peca_touching(p, t))
 	{
 		wait();
-		peca_move_y(p, 1);
+		clear();
+		mostra_tela(t);
+		mostra_peca(p);
+		refresh();
+		peca_move_y(p, 2);
 	}
 	for(i=0;i<4;++i)
 		t->bloco[p->bloco[i].y][p->bloco[i].x].tipo = tipo;

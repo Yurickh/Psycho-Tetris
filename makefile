@@ -13,7 +13,7 @@ game.o: game.c game.h engine.h tela.h peca.h
 	gcc game.c -c
 
 menu.o: menu.c menu.h
-	gcc menu.c -c
+	gcc -Wall menu.c -c
 
 bloco.o: bloco.c bloco.h engine.h
 	gcc bloco.c -c
