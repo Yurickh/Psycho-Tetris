@@ -38,9 +38,11 @@ void inicializa_ncurses()
 	noecho();
 	timeout(0);
 	curs_set(0);
+	keypad(stdscr, FALSE);
 
 	start_color();
 	init_pair(1, COLOR_RED, COLOR_BLACK); //Quadrado
+	init_pair(2, COLOR_BLUE, COLOR_BLACK);
 }
 
 void finaliza_ncurses()
