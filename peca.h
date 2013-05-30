@@ -24,7 +24,7 @@ typedef struct
 
 
 /// Verifica se a peca em questão está tocando inferiormente alguma outra;
-EXT_MOD_PECA int peca_touching(Peca* p, Tela* t);
+EXT_MOD_PECA int peca_touching(Peca* p, Tela* t, char resp);
 /// Cria uma nova peça da forma quadrada.
 EXT_MOD_PECA Peca nova_peca(Tela* tela, int x, int y);
 /// Move a peça x unidades na horizontal.

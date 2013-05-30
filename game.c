@@ -39,7 +39,7 @@ EXT_MOD_GAME void start_game()
 	{
 		*peca = nova_peca(tela, TELA_LARGURA/2, 0);
 
-		if(peca_touching(peca, tela))
+		if(peca_touching(peca, tela, 's'))
 			break;
 		
 		while(!end)
@@ -55,17 +55,22 @@ EXT_MOD_GAME void start_game()
 			{
 				case 'S':
 				case 's':
-					peca_move_y(peca, 2);
+					if(peca_touching(peca, tela, 's') == 0)
+							peca_move_y(peca, 1);		
 				break;
 
 				case 'A':
 				case 'a':
-					peca_move_x(peca, -1);
+					if(peca_touching(peca, tela, 'a') == 0)
+						peca_move_x(peca, -1);
 				break;
 
 				case 'D':
 				case 'd':
-					peca_move_x(peca, 1);
+				{
+					if (peca_touching(peca, tela, 'd') == 0)
+						peca_move_x(peca, 1);
+				}
 				break;
 
 				case ENTER:
@@ -82,7 +87,7 @@ EXT_MOD_GAME void start_game()
 				break;		
 			}
 			clear();
-			if(peca_touching(peca, tela))
+			if(peca_touching(peca, tela, 's'))
 			{
 				prende_peca(peca, tela);
 				break;
