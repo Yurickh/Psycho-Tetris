@@ -29,32 +29,18 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 		}
 	}
 
-<<<<<<< HEAD
 	for(i=OFFSET_X_TELA-1; i < 2*TELA_LARGURA+OFFSET_X_TELA; i+=2)
 	{
 		set_color(4);
 		mvaddstr(OFFSET_Y_TELA-1, i, "..");
 		mvaddstr(OFFSET_Y_TELA + TELA_ALTURA-1, i, "..");
-=======
-	for(i=OFFSET_X_TELA; i < 2*TELA_LARGURA+OFFSET_X_TELA; i+=2)
-	{
-		set_color(1);
-		mvaddstr(OFFSET_Y_TELA-1, i, "__");
-		mvaddstr(OFFSET_Y_TELA + TELA_ALTURA, i, "--");
->>>>>>> 216927560366a8360c9c4ceb8de214cd3468b9d5
 	}
 
 	for(i=OFFSET_Y_TELA; i <= TELA_ALTURA+OFFSET_Y_TELA; ++i)
 	{
-<<<<<<< HEAD
 		set_color((i%2)+3);
 		mvaddstr(i-1, OFFSET_X_TELA-1, "..");
 		mvaddstr(i-1, OFFSET_X_TELA + 2*TELA_LARGURA, "..");
-=======
-		set_color(1);
-		mvaddch(i, OFFSET_X_TELA-1, '|');
-		mvaddch(i, OFFSET_X_TELA + 2*TELA_LARGURA, '|');
->>>>>>> 216927560366a8360c9c4ceb8de214cd3468b9d5
 	}
 
 }

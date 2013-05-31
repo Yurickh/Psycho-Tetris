@@ -43,11 +43,8 @@ void inicializa_ncurses()
 	start_color();
 	init_pair(1, COLOR_RED, COLOR_BLACK); //Quadrado
 	init_pair(2, COLOR_BLUE, COLOR_BLACK);
-<<<<<<< HEAD
 	init_pair(3, COLOR_MAGENTA, COLOR_MAGENTA); /**esse eh para fazer a margem bonita e embelezada do jogo*/
 	init_pair(4, COLOR_WHITE, COLOR_WHITE); /**esse daqui tambem :D*/
-=======
->>>>>>> 216927560366a8360c9c4ceb8de214cd3468b9d5
 }
 
 void finaliza_ncurses()
