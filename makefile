@@ -1,7 +1,7 @@
 all:
 
 exe: main.o menu.o game.o engine.o bloco.o peca.o tela.o
-	gcc main.o game.o menu.o engine.o bloco.o peca.o tela.o -o exe -lmenu -lncurses
+	gcc main.o game.o menu.o engine.o bloco.o peca.o tela.o -o exe -lmenu -lncurses -g
 
 main.o: main.c menu.h game.h engine.h
 	gcc main.c -c

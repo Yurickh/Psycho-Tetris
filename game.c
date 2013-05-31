@@ -2,12 +2,14 @@
 #include <time.h>
 #define SERV_ENGINE
 #include "engine.h"
+#define SERV_TELA
 #include "tela.h"
 #define SERV_PECA
 #include "peca.h"
 #include "game.h"
 
 #define ENTER 10
+#define ESC 27
 
 int endgame(Tela* t)
 {
@@ -35,9 +37,9 @@ EXT_MOD_GAME void start_game()
 
 	while(!end)
 	{
-		*peca = nova_peca(tela, 5, 0);
+		*peca = nova_peca(tela, TELA_LARGURA/2, 0);
 
-		if(peca_touching(peca, tela))
+		if(peca_touching(peca, tela, 's'))
 			break;
 		
 		while(!end)
@@ -45,46 +47,47 @@ EXT_MOD_GAME void start_game()
 			mostra_tela(tela);
 			mostra_peca(peca);
 			refresh();
-			in = pega_input(wait());
+			in = pega_input(0);
 
-			peca_move_y(peca, 1);
+			peca_move_y(peca,1);
 
 			switch(in)
 			{
-				case 's':
 				case 'S':
-					peca_move_y(peca, 1);
+				case 's':
+					if(peca_touching(peca, tela, 's') == 0)
+							peca_move_y(peca, 1);		
 				break;
 
-				case 'a':
 				case 'A':
-					if(peca->x-1 >= 0)
+				case 'a':
+					if(peca_touching(peca, tela, 'a') == 0)
 						peca_move_x(peca, -1);
 				break;
 
-				case 'd':
 				case 'D':
+				case 'd':
 				{
-					int i, num=0;
-					for(i=0;i<4; ++i)
-						if(peca->bloco[i].x+1 >= TELA_LARGURA)
-							++num;
-					if(!num)
+					if (peca_touching(peca, tela, 'd') == 0)
 						peca_move_x(peca, 1);
 				}
-				break;
-
-				case 'Q':
-				case 'q':
-					end = 1;
 				break;
 
 				case ENTER:
 					prende_peca(peca, tela);
 				break;
+				
+				case 'q': 
+				case 'Q':
+					end = 1;
+				break;
+
+				case ESC:
+					while(getch() != ESC);
+				break;		
 			}
 			clear();
-			if(peca_touching(peca, tela))
+			if(peca_touching(peca, tela, 's'))
 			{
 				prende_peca(peca, tela);
 				break;

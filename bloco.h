@@ -1,3 +1,5 @@
+/**Definição de servidor.
+Define o servidor de Bloco que sera usado para formar a tela e as peças.*/
 #ifndef BLOCO_H
 #define BLOCO_H
 
@@ -8,9 +10,11 @@
 #endif
 
 #define STANDARD 10
+#define OFFSET_X_TELA 30
+#define OFFSET_Y_TELA 1
 
 typedef enum
-{INVISIVEL, QUADRADO} BlocoTipo;
+{INVISIVEL, QUADRADO, Q2} BlocoTipo;
 
 struct Bloco{
 	int x;
@@ -20,7 +24,7 @@ struct Bloco{
 
 typedef struct Bloco Bloco;
 
-EXT_MOD_BLOCO Bloco novo_bloco(int, int, BlocoTipo);
-EXT_MOD_BLOCO void mostra_bloco(Bloco*);
+EXT_MOD_BLOCO Bloco novo_bloco(int, int, BlocoTipo);//!<Função que cria bloco
+EXT_MOD_BLOCO void mostra_bloco(Bloco*);//!<Função que mostra os blocos
 
 #endif

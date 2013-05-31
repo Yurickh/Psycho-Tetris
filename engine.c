@@ -5,11 +5,11 @@
 
 #define FPS 10
 
-int wait()
+int wait(int fps)
 {
 	static clock_t t0 = 0;
 	static clock_t t1;
-	clock_t num = CLOCKS_PER_SEC/FPS;
+	clock_t num = CLOCKS_PER_SEC/fps;
 	
 	t1 = clock() - t0;
 	if (t1 < num)
@@ -38,9 +38,13 @@ void inicializa_ncurses()
 	noecho();
 	timeout(0);
 	curs_set(0);
+	keypad(stdscr, FALSE);
 
 	start_color();
 	init_pair(1, COLOR_RED, COLOR_BLACK); //Quadrado
+	init_pair(2, COLOR_BLUE, COLOR_BLACK);
+	init_pair(3, COLOR_MAGENTA, COLOR_MAGENTA); /**esse eh para fazer a margem bonita e embelezada do jogo*/
+	init_pair(4, COLOR_WHITE, COLOR_WHITE); /**esse daqui tambem :D*/
 }
 
 void finaliza_ncurses()
@@ -50,5 +54,6 @@ void finaliza_ncurses()
 
 int pega_input(int espera)
 {
+	wait(FPS);
 	return getch();
 }
