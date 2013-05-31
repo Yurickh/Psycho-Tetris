@@ -17,7 +17,10 @@ int main()
 			PSYCHO TETRIS MEGA BETA\n\
 	===========================================================";
 
-	char gameover[] = "GAMEOVER";
+	char gameover[] = 
+"	===========================================================\n\
+				GAMEOVER\n\
+	===========================================================";
 
 	inicializa_ncurses();
 	if(!menu(options, 2, title))

@@ -24,11 +24,11 @@ ITEM** create_item(char** options, int n_choices)
 }
 
 //Cria a tela de menu propriamente dita.
-void create_menu(MENU** menu, WINDOW** win_menu, ITEM** item)
+void create_menu(MENU** menu, WINDOW** win_menu, ITEM** item, int n_ch)
 {
 	*menu = new_menu((ITEM**) item);
 
-	*win_menu = newwin(4,10,20,35);
+	*win_menu = newwin(2 + n_ch,10,22 - n_ch,35);
 	keypad(*win_menu, TRUE);
 
 	set_menu_win(*menu, *win_menu);
@@ -53,7 +53,7 @@ EXT_MOD_MENU int menu(char** options, int n_choices, char* title)
 	WINDOW* win_menu;
 
 	item = create_item(options, n_choices);
-	create_menu(&menu, &win_menu, item);
+	create_menu(&menu, &win_menu, item, n_choices);
 
 	draw_title(title);
 
