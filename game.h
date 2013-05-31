@@ -8,5 +8,6 @@
 #endif
 
 EXT_MOD_GAME void start_game(void);
+EXT_MOD_GAME void game_over(char*);
 
 #endif

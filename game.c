@@ -18,7 +18,7 @@ int endgame(Tela* t)
 
 	for(i=0;i<TELA_LARGURA;++i)
 	{
-		if(t->bloco[i][0].tipo)
+		if(t->bloco[0][i].tipo)
 			res*=0;
 	}
 
@@ -55,20 +55,20 @@ EXT_MOD_GAME void start_game()
 			{
 				case 'S':
 				case 's':
-					if(peca_touching(peca, tela, 's') == 0)
+					if(!peca_touching(peca, tela, 's'))
 							peca_move_y(peca, 1);		
 				break;
 
 				case 'A':
 				case 'a':
-					if(peca_touching(peca, tela, 'a') == 0)
+					if(!peca_touching(peca, tela, 'a'))
 						peca_move_x(peca, -1);
 				break;
 
 				case 'D':
 				case 'd':
 				{
-					if (peca_touching(peca, tela, 'd') == 0)
+					if (!peca_touching(peca, tela, 'd'))
 						peca_move_x(peca, 1);
 				}
 				break;
@@ -98,4 +98,12 @@ EXT_MOD_GAME void start_game()
 			end = 1;
 	}
 
+}
+
+EXT_MOD_GAME void game_over(char* gameover)
+{
+	set_color(COR_TELA);
+	mvaddstr(0,0,gameover);
+	refresh();
+	getchar();
 }

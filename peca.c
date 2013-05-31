@@ -60,7 +60,6 @@ EXT_MOD_PECA Peca nova_peca (Tela* tela, int x, int y)
 
 	switch(tipo)
 	{
-		case Q2:
 		case QUADRADO:
 			peca.bloco[0].x = x;
 			peca.bloco[1].x = x+1;

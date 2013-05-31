@@ -12,6 +12,8 @@
 #define OFFSET_X_TELA 2
 #define OFFSET_Y_TELA 1
 
+#define COR_TELA 20
+
 #include <stdlib.h>
 #define SERV_BLOCO
 #include "bloco.h"

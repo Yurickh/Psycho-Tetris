@@ -29,18 +29,17 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 		}
 	}
 
-	for(i=OFFSET_X_TELA; i < 2*TELA_LARGURA+OFFSET_X_TELA; i+=2)
+	for(i=t->x; i < 2*TELA_LARGURA+t->x; i+=2)
 	{
-		set_color(1);
-		mvaddstr(OFFSET_Y_TELA-1, i, "__");
-		mvaddstr(OFFSET_Y_TELA + TELA_ALTURA, i, "--");
+		set_color(COR_TELA);
+		mvaddstr(t->y-1, i, "__");
+		mvaddstr(t->y + TELA_ALTURA, i, "--");
 	}
 
-	for(i=OFFSET_Y_TELA; i <= TELA_ALTURA+OFFSET_Y_TELA; ++i)
+	for(i=t->y; i <= TELA_ALTURA + t->y; ++i)
 	{
-		set_color(1);
-		mvaddch(i, OFFSET_X_TELA-1, '|');
-		mvaddch(i, OFFSET_X_TELA + 2*TELA_LARGURA, '|');
+		mvaddch(i, t->x-1, '|');
+		mvaddch(i, t->x + 2*TELA_LARGURA, '|');
 	}
 
 }

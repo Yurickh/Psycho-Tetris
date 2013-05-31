@@ -10,7 +10,7 @@
 #define SERV_TELA
 #include "tela.h"
 
-#define TOT_PECA_TIPOS 2
+#define TOT_PECA_TIPOS 1
 
 /**Estrutura básica de um peça.
 Cada peça deve conter suas próprias coordenadas e as coordenadas de cada um de seus blocos.

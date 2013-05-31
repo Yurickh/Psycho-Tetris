@@ -42,7 +42,7 @@ void inicializa_ncurses()
 
 	start_color();
 	init_pair(1, COLOR_RED, COLOR_BLACK); //Quadrado
-	init_pair(2, COLOR_BLUE, COLOR_BLACK);
+	init_pair(20, COLOR_WHITE, COLOR_BLACK); //Cor_tela
 }
 
 void finaliza_ncurses()

@@ -10,11 +10,9 @@ Define o servidor de Bloco que sera usado para formar a tela e as peças.*/
 #endif
 
 #define STANDARD 10
-#define OFFSET_X_TELA 2
-#define OFFSET_Y_TELA 1
 
 typedef enum
-{INVISIVEL, QUADRADO, Q2} BlocoTipo;
+{INVISIVEL, QUADRADO} BlocoTipo;
 
 struct Bloco{
 	int x;

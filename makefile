@@ -15,7 +15,7 @@ game.o: game.c game.h engine.h tela.h peca.h
 menu.o: menu.c menu.h
 	gcc -Wall menu.c -c
 
-bloco.o: bloco.c bloco.h engine.h
+bloco.o: bloco.c bloco.h engine.h tela.h
 	gcc bloco.c -c
 
 engine.o: engine.c engine.h
