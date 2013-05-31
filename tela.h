@@ -9,7 +9,11 @@
 
 #define TELA_LARGURA 10
 #define TELA_ALTURA 20
+<<<<<<< HEAD
 #define OFFSET_X_TELA 30
+=======
+#define OFFSET_X_TELA 2
+>>>>>>> 216927560366a8360c9c4ceb8de214cd3468b9d5
 #define OFFSET_Y_TELA 1
 
 #include <stdlib.h>

@@ -10,7 +10,11 @@ Define o servidor de Bloco que sera usado para formar a tela e as peças.*/
 #endif
 
 #define STANDARD 10
+<<<<<<< HEAD
 #define OFFSET_X_TELA 30
+=======
+#define OFFSET_X_TELA 2
+>>>>>>> 216927560366a8360c9c4ceb8de214cd3468b9d5
 #define OFFSET_Y_TELA 1
 
 typedef enum
