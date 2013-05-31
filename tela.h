@@ -1,5 +1,5 @@
-#ifndef MOD_TELA_H
-#define MOD_TELA_H
+#ifndef TELA_H
+#define TELA_H
 
 #ifndef SERV_TELA
 #define EXT_MOD_TELA
@@ -11,8 +11,6 @@
 #define TELA_ALTURA 20
 #define OFFSET_X_TELA 2
 #define OFFSET_Y_TELA 1
-
-#define COR_TELA 20
 
 #include <stdlib.h>
 #define SERV_BLOCO

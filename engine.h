@@ -1,7 +1,7 @@
 /**Definiçao de servidor.
 Define servidor de engine, que sera usada para inicialização do ncurses e retornar um input	
 */
-#ifdef ENGINE_H
+#ifndef ENGINE_H
 #define ENGINE_H
 
 #ifdef SERV_ENGINE
@@ -10,9 +10,14 @@ Define servidor de engine, que sera usada para inicialização do ncurses e reto
 #define EXT_MOD_ENGINE extern
 #endif
 
+#define COR_TELA 20
 #define STANDARD 0
 
-EXT_MOD_ENGINE int wait(void); //!<Função que participa do controle de fps
+#include <stdlib.h>
+#include <ncurses.h>
+#include <time.h>
+
+EXT_MOD_ENGINE void wait(int); //!<Função que participa do controle de fps
 EXT_MOD_ENGINE void set_color(int); //!<Função que atribui um par de cores
 EXT_MOD_ENGINE void inicializa_ncurses();//!<Função que inicializa ncurses
 EXT_MOD_ENGINE void finaliza_ncurses(); //!<Função que finaliza ncurses

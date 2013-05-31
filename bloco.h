@@ -9,8 +9,6 @@ Define o servidor de Bloco que sera usado para formar a tela e as peças.*/
 #define EXT_MOD_BLOCO extern
 #endif
 
-#define STANDARD 10
-
 typedef enum
 {INVISIVEL, QUADRADO} BlocoTipo;
 

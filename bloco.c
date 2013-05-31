@@ -1,7 +1,7 @@
-#define SERV_TELA
-#include "tela.h"
 #define SERV_ENGINE
 #include "engine.h"
+#define SERV_TELA
+#include "tela.h"
 #include "bloco.h"
 
 EXT_MOD_BLOCO void mostra_bloco(Bloco* b)

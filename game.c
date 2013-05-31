@@ -47,7 +47,8 @@ EXT_MOD_GAME void start_game()
 			mostra_tela(tela);
 			mostra_peca(peca);
 			refresh();
-			in = pega_input(0);
+
+			in = pega_input(2);
 
 			peca_move_y(peca,1);
 
