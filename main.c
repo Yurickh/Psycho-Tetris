@@ -22,10 +22,11 @@ int main()
 				GAMEOVER\n\
 	===========================================================";
 
+	int opt;
 	inicializa_ncurses();
-	if(!menu(options, 2, title))
+	if((opt = menu(options, 2, title)) != 1)
 	{
-		start_game();
+		start_game(opt);
 		game_over(gameover);
 	}
 

@@ -32,7 +32,7 @@ void create_menu(MENU** menu, WINDOW** win_menu, ITEM** item, int n_ch)
 	keypad(*win_menu, TRUE);
 
 	set_menu_win(*menu, *win_menu);
-	set_menu_sub(*menu, derwin(*win_menu, 3, 8, 1, 1));
+	set_menu_sub(*menu, derwin(*win_menu, n_ch +1, 8, 1, 1));
 
 	set_menu_mark(*menu, CURSOR);
 	box(*win_menu, 0, 0);
