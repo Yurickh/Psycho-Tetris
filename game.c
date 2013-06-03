@@ -41,7 +41,10 @@ EXT_MOD_GAME void start_game(int difficulty)
 		peca = nova_peca(tela, TELA_LARGURA/2 - 1, 0);
 
 		if(peca_touching(peca, tela, 's'))
+		{
+			deleta_peca(peca);
 			break;
+		}
 		
 		ini = clock();
 		while(!end)
@@ -89,10 +92,14 @@ EXT_MOD_GAME void start_game(int difficulty)
 					while(in != ESC && in!='q' && in!='Q');
 
 					if(in == 'q' || in == 'Q')
+					{
 						end = 1;
+						deleta_peca(peca);
+					}
 				break;		
 			}
 			clear();
+			if(end) break;
 			now = clock();
 			if(now - ini > 5)
 			{
@@ -102,12 +109,16 @@ EXT_MOD_GAME void start_game(int difficulty)
 			if(peca_touching(peca, tela, 's'))
 			{
 				prende_peca(peca, tela);
+				deleta_peca(peca);
 				break;
 			}
 		}
 
 		if(endgame(tela))
+		{
 			end = 1;
+			deleta_tela(tela);
+		}
 	}
 
 }

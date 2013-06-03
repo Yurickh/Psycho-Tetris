@@ -102,6 +102,11 @@ EXT_MOD_PECA void mostra_peca(Peca* p)
 		mostra_bloco(&(p->bloco[i]));
 }
 
+EXT_MOD_PECA void deleta_peca(Peca* p)
+{
+	free(p);
+}
+
 EXT_MOD_PECA void prende_peca(Peca* p, Tela* t)
 {
 	int i;
