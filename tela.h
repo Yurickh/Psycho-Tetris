@@ -21,9 +21,12 @@ typedef struct
 	int x, y;
 	Bloco bloco[TELA_ALTURA][TELA_LARGURA];
 } Tela;
-	
+
+///Cria uma tela
 EXT_MOD_TELA Tela* nova_tela ();
+///Mostra a tela no terminal
 EXT_MOD_TELA void mostra_tela (Tela* t);
+///Limpa a tela da memória
 EXT_MOD_TELA void deleta_tela (Tela* t);
 
 #endif
