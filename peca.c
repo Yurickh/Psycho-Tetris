@@ -49,32 +49,34 @@ EXT_MOD_PECA int peca_touching (Peca* p, Tela* t, char resp)
 	return result;
 }
 
-EXT_MOD_PECA Peca nova_peca (Tela* tela, int x, int y)
+EXT_MOD_PECA Peca* nova_peca (Tela* tela, int x, int y)
 {
-	Peca peca;
+	Peca *peca;
 	int i;
 	BlocoTipo tipo;
 
-	peca.x = x;
-	peca.y = y;
+	peca = (Peca*) malloc(sizeof(Peca));
+
+	peca->x = x;
+	peca->y = y;
 
 	tipo = 1 + rand() % TOT_PECA_TIPOS;
 
 	for(i=0;i<4;i++) 
-		peca.bloco[i] = novo_bloco(0, 0, tipo);
+		peca->bloco[i] = novo_bloco(0, 0, tipo);
 
 	switch(tipo)
 	{
 		case QUADRADO:
-			peca.bloco[0].x = x;
-			peca.bloco[1].x = x+1;
-			peca.bloco[2].x = x;
-			peca.bloco[3].x = x+1;
+			peca->bloco[0].x = x;
+			peca->bloco[1].x = x+1;
+			peca->bloco[2].x = x;
+			peca->bloco[3].x = x+1;
 
-			peca.bloco[0].y = y;
-			peca.bloco[1].y = y;
-			peca.bloco[2].y = y+1;
-			peca.bloco[3].y = y+1;
+			peca->bloco[0].y = y;
+			peca->bloco[1].y = y;
+			peca->bloco[2].y = y+1;
+			peca->bloco[3].y = y+1;
 		break;
 	}
 	

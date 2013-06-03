@@ -67,7 +67,8 @@ EXT_MOD_ENGINE int pega_input(int espera)
 	b = a;
 	while(a==b && clock() < ini + espera)
 		b = getch();
-	ungetch(b);
+	if(a!=b)
+		ungetch(b);
 
 	return a;
 }
