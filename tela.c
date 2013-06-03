@@ -4,16 +4,18 @@
 #define SERV_PECA
 #include "peca.h"
 
-EXT_MOD_TELA Tela nova_tela () {
-	Tela t;
+EXT_MOD_TELA Tela* nova_tela () {
+	Tela *t;
 	int i, j;
 
-	t.x = OFFSET_X_TELA;
-	t.y = OFFSET_Y_TELA;
+	t = (Tela*) malloc(sizeof(Tela));
+
+	t->x = OFFSET_X_TELA;
+	t->y = OFFSET_Y_TELA;
 
 	for (i=0; i < TELA_ALTURA; i++){
 		for (j=0; j < TELA_LARGURA; j++) {
-			t.bloco[i][j] = novo_bloco(j, i, INVISIVEL);
+			t->bloco[i][j] = novo_bloco(j, i, INVISIVEL);
 		}
 
 	}
