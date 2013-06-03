@@ -86,9 +86,7 @@ EXT_MOD_GAME void start_game(int difficulty)
 
 				case ESC:
 					do {in = getch();}
-					while(in != ESC && in != 'q' && in !f
-f
-= 'Q');
+					while(in != ESC && in != 'q' && in != 'Q');
 					if(in == 'q' || in == 'Q')
 						break;
 				break;		

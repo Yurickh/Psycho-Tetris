@@ -45,5 +45,10 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 	}
 
 	set_color(COR_TELA);
-	mvaddstr(t->y/2, t->x + TELA_ALTURA + 3, "Comandos:\nA S D: Movem a peca\nQ: Sai do jogo\nESC: Pausa o jogo");
+	mvaddstr(t->y/2, t->x + TELA_ALTURA + 3, "Comandos:");
+	mvaddstr(t->y/2 + 1, t->x + TELA_ALTURA + 3, "[A]: Move para a esquerda.");
+	mvaddstr(t->y/2 + 2, t->x + TELA_ALTURA + 3, "[S]: Move para baixo.");
+	mvaddstr(t->y/2 + 3, t->x + TELA_ALTURA + 3, "[D]: Move para a direita.");
+	mvaddstr(t->y/2 + 4, t->x + TELA_ALTURA + 3, "[Q]: Sai do jogo");
+	mvaddstr(t->y/2 + 5, t->x + TELA_ALTURA + 3, "[ESC]: Pausa o jogo");
 }
