@@ -29,18 +29,18 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 			mostra_bloco(&(t->bloco[i][j]));
 		}
 	}
-
-	for(i=t->x; i < 2*TELA_LARGURA+t->x; i+=2)
+	
+	for(i=OFFSET_X_TELA-1; i < 2*TELA_LARGURA+OFFSET_X_TELA; i+=2)
 	{
-		set_color(COR_TELA);
-		mvaddstr(t->y-1, i, "__");
-		mvaddstr(t->y + TELA_ALTURA, i, "--");
+		set_color(8);
+		mvaddstr(OFFSET_Y_TELA-1, i, "..");
+		mvaddstr(OFFSET_Y_TELA + TELA_ALTURA-1, i, "..");
 	}
 
-	for(i=t->y; i <= TELA_ALTURA + t->y; ++i)
+	for(i=OFFSET_Y_TELA; i <= TELA_ALTURA+OFFSET_Y_TELA; ++i)
 	{
-		mvaddch(i, t->x-1, '|');
-		mvaddch(i, t->x + 2*TELA_LARGURA, '|');
+		set_color((i%2)+7);
+		mvaddstr(i-1, OFFSET_X_TELA-1, "..");
+		mvaddstr(i-1, OFFSET_X_TELA + 2*TELA_LARGURA, "..");
 	}
-
 }
