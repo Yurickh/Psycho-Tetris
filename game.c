@@ -69,10 +69,8 @@ EXT_MOD_GAME void start_game(int difficulty)
 
 				case 'D':
 				case 'd':
-				{
 					if (!peca_touching(peca, tela, 'd'))
 						peca_move_x(peca, 1);
-				}
 				break;
 
 				case ENTER:
@@ -85,10 +83,13 @@ EXT_MOD_GAME void start_game(int difficulty)
 				break;
 
 				case ESC:
+					set_color(COR_TELA);
+					mvaddstr(tela->y + TELA_ALTURA/2 -1, tela->x + TELA_LARGURA/2 + 2, "PAUSED");
 					do {in = getch();}
-					while(in != ESC && in != 'q' && in != 'Q');
+					while(in != ESC && in!='q' && in!='Q');
+
 					if(in == 'q' || in == 'Q')
-						break;
+						end = 1;
 				break;		
 			}
 			clear();
