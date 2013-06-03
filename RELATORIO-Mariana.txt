@@ -54,3 +54,7 @@ Matricula 12/0018276;
 *********************************************************************************************
  DATA	 |HORAS TRABALHADAS|	TIPO TAREFA	| 		DESCRICAO DA TAREFA REALIZADA
  03/06/13 |	0.50	|  redigir/revisar casos de teste|  producao do CUnit do modulo da Peca
+
+*********************************************************************************************
+ DATA	 |HORAS TRABALHADAS|	TIPO TAREFA	| 		DESCRICAO DA TAREFA REALIZADA
+ 03/06/13 |	1.50	|  realizar os testes|  sucesso parcial -- erro com arquivo CUnit fornecido em sala
