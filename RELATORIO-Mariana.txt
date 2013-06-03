@@ -46,3 +46,11 @@ Matricula 12/0018276;
 *********************************************************************************************
  DATA	 |HORAS TRABALHADAS|	TIPO TAREFA	| 		DESCRICAO DA TAREFA REALIZADA
  30/05/13 |	1.25	|  realizar os testes|  tentativa fracassou devido a dificuldades na compilacao
+
+*********************************************************************************************
+ DATA	 |HORAS TRABALHADAS|	TIPO TAREFA	| 		DESCRICAO DA TAREFA REALIZADA
+ 03/06/13 |	2.25	|  diagnosticar e corrigir problemas encontrados|  consertar bugs finais no jogo
+
+*********************************************************************************************
+ DATA	 |HORAS TRABALHADAS|	TIPO TAREFA	| 		DESCRICAO DA TAREFA REALIZADA
+ 03/06/13 |	0.50	|  redigir/revisar casos de teste|  producao do CUnit do modulo da Peca
