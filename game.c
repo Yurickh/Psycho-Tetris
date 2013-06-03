@@ -38,7 +38,7 @@ EXT_MOD_GAME void start_game(int difficulty)
 	while(!end)
 	{
 		clock_t ini;
-		*peca = nova_peca(tela, TELA_LARGURA/2, 0);
+		*peca = nova_peca(tela, TELA_LARGURA/2 - 1, 0);
 
 		if(peca_touching(peca, tela, 's'))
 			break;
@@ -46,14 +46,13 @@ EXT_MOD_GAME void start_game(int difficulty)
 		ini = clock();
 		while(!end)
 		{
-			clock_t now = clock();
+			clock_t now;
 
 			mostra_tela(tela);
 			mostra_peca(peca);
 			refresh();
 
 			in = pega_input(2);
-
 			switch(in)
 			{
 				case 'S':
@@ -86,10 +85,16 @@ EXT_MOD_GAME void start_game(int difficulty)
 				break;
 
 				case ESC:
-					while(getch() != ESC);
+					do {in = getch();}
+					while(in != ESC && in != 'q' && in !f
+f
+= 'Q');
+					if(in == 'q' || in == 'Q')
+						break;
 				break;		
 			}
 			clear();
+			now = clock();
 			if(now - ini > 5)
 			{
 				peca_move_y(peca, 1);

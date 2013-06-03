@@ -44,9 +44,9 @@ EXT_MOD_ENGINE void inicializa_ncurses()
 	init_pair(4, COLOR_CYAN, COLOR_BLACK); 	//S1 (S)
 	init_pair(5, COLOR_GREEN, COLOR_BLACK);	//S2 (Z)
 	init_pair(6, COLOR_WHITE, COLOR_BLACK); //T
-	init_pair(20, COLOR_WHITE, COLOR_BLACK);//Cor_tela
-	init_pair(7, COLOR_MAGENTA, COLOR_MAGENTA); /**esse eh para fazer a margem bonita e embelezada do jogo*/
-	init_pair(8, COLOR_WHITE, COLOR_WHITE); /**esse daqui tambem :D*/
+	init_pair(7, COLOR_MAGENTA, COLOR_MAGENTA); //Cor_borda 1
+	init_pair(8, COLOR_WHITE, COLOR_WHITE); //Cor_borda 2
+	init_pair(20, COLOR_WHITE, COLOR_BLACK); //Cor padrão
 }
 
 EXT_MOD_ENGINE void finaliza_ncurses()

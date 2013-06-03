@@ -30,17 +30,20 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 		}
 	}
 	
-	for(i=OFFSET_X_TELA-1; i < 2*TELA_LARGURA+OFFSET_X_TELA; i+=2)
+	for(i=t->x-1; i < 2*TELA_LARGURA+t->x; i+=2)
 	{
 		set_color(8);
-		mvaddstr(OFFSET_Y_TELA-1, i, "..");
-		mvaddstr(OFFSET_Y_TELA + TELA_ALTURA-1, i, "..");
+		mvaddstr(t->y-1, i, "..");
+		mvaddstr(t->y+1 + TELA_ALTURA-1, i, "..");
 	}
 
-	for(i=OFFSET_Y_TELA; i <= TELA_ALTURA+OFFSET_Y_TELA; ++i)
+	for(i=t->y; i <= TELA_ALTURA + t->y + 1; ++i)
 	{
 		set_color((i%2)+7);
-		mvaddstr(i-1, OFFSET_X_TELA-1, "..");
-		mvaddstr(i-1, OFFSET_X_TELA + 2*TELA_LARGURA, "..");
+		mvaddstr(i-1, t->x - 2, "..");
+		mvaddstr(i-1, t->x + 2*TELA_LARGURA, "..");
 	}
+
+	set_color(COR_TELA);
+	mvaddstr(t->y/2, t->x + TELA_ALTURA + 3, "Comandos:\nA S D: Movem a peca\nQ: Sai do jogo\nESC: Pausa o jogo");
 }
