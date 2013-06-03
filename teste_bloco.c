@@ -3,9 +3,9 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "CUnit/CUnit.h"
-#include "CUnit/Basic.h" 
-#include "bloco.h"
+#include "CUnit.h"
+#include "Basic.h" 
+#include "bloco.c"
 
 void adicionar_testes_smo_datas(void);
 

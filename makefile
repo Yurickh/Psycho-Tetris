@@ -24,6 +24,17 @@ engine.o: engine.c engine.h
 peca.o: peca.c peca.h bloco.h
 	gcc peca.c -c
 
+teste: teste_bloco tela_teste peca_teste
+
+teste_bloco: teste_bloco.c bloco.h
+	gcc -I./CUnit -L./CUnit teste_bloco.c -lcunit -o teste_bloco
+
+tela_teste: tela_teste.c tela.h bloco.h
+	gcc -I./CUnit -L./CUnit tela_teste.c -lcunit -o tela_teste
+
+peca_teste: peca_teste.c peca.h
+	gcc -I./CUnit -L./Cunit peca_teste.c -lcunit -o peca_teste
+
 clean:
 	rm *.o
 	rm *~
