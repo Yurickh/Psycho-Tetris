@@ -24,5 +24,6 @@ typedef struct
 	
 EXT_MOD_TELA Tela* nova_tela ();
 EXT_MOD_TELA void mostra_tela (Tela* t);
+EXT_MOD_TELA void deleta_tela (Tela* t);
 
 #endif

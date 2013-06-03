@@ -33,6 +33,8 @@ EXT_MOD_PECA void peca_move_x(Peca* peca, int x);
 EXT_MOD_PECA void peca_move_y(Peca* peca, int y);
 /// Mostra a peça na tela.
 EXT_MOD_PECA void mostra_peca(Peca* p);
+/// Apaga a peça da memória.
+EXT_MOD_PECA void deleta_peca(Peca* p);
 /// Prende a peça no fim da tela.
 EXT_MOD_PECA void prende_peca(Peca* p, Tela* t);
 

@@ -54,3 +54,8 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 	mvaddstr(t->y/2 + 4, t->x + TELA_ALTURA + 3, "[Q]: Sai do jogo");
 	mvaddstr(t->y/2 + 5, t->x + TELA_ALTURA + 3, "[ESC]: Pausa o jogo");
 }
+
+EXT_MOD_TELA void deleta_tela(Tela* t)
+{
+	free(t);
+}
