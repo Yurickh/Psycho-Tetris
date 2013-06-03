@@ -18,28 +18,33 @@ void move_blocos_peca(Peca* peca, int x, int y)
 EXT_MOD_PECA int peca_touching (Peca* p, Tela* t, char resp)
 {
 	int result = 0, i;
-	if (resp == 's')
+	switch(resp)
 	{
-		for(i = 0; i<4; ++i)
-		{
-			if(t->bloco[p->bloco[i].y + 1][p->bloco[i].x].tipo != INVISIVEL || p->bloco[i].y + 1 >= TELA_ALTURA)
-				result++;
-			if(t->bloco[p->bloco[i].y][p->bloco[i].x].tipo != INVISIVEL || p->bloco[i].y < 0)
-				result++;
-		}
-	}else if (resp == 'a'){
-		for (i=0;i<4;++i)
-		{
-			if(t->bloco[p->bloco[i].y][p->bloco[i].x-1].tipo != INVISIVEL || p->bloco[i].x-1 < 0)
-				result++;
-		}
-	}
-	else if (resp =='d'){
-		for(i=0;i<4;++i)
-		{
-			if(t->bloco[p->bloco[i].y][p->bloco[i].x+1].tipo != INVISIVEL || p->bloco[i].x+1 >= TELA_LARGURA)
-				result++;
-		}
+		case 's':
+			for(i = 0; i<4; ++i)
+			{
+				if(t->bloco[p->bloco[i].y + 1][p->bloco[i].x].tipo != INVISIVEL || p->bloco[i].y + 1 >= TELA_ALTURA)
+					result++;
+				if(t->bloco[p->bloco[i].y][p->bloco[i].x].tipo != INVISIVEL || p->bloco[i].y < 0)
+					result++;
+			}
+		break;
+
+		case 'a':
+			for (i=0;i<4;++i)
+			{
+				if(t->bloco[p->bloco[i].y][p->bloco[i].x-1].tipo != INVISIVEL || p->bloco[i].x-1 < 0)
+					result++;
+			}
+		break;
+
+		case 'd':
+			for(i=0;i<4;++i)
+			{
+				if(t->bloco[p->bloco[i].y][p->bloco[i].x+1].tipo != INVISIVEL || p->bloco[i].x+1 >= TELA_LARGURA)
+					result++;
+			}
+		break;
 	}
 	return result;
 }
@@ -70,8 +75,6 @@ EXT_MOD_PECA Peca nova_peca (Tela* tela, int x, int y)
 			peca.bloco[1].y = y;
 			peca.bloco[2].y = y+1;
 			peca.bloco[3].y = y+1;
-		break;
-		default:
 		break;
 	}
 	
