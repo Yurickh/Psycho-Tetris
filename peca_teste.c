@@ -2,10 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include "CUnit/CUnit.h"
-#include "CUnit/Basic.h" 
-#include "tela.h"
-#include "bloco.h"
+#include "CUnit.h"
+#include "Basic.h" 
+#include "peca.c"
 
 void adicionar_testes_smo_datas();
 
