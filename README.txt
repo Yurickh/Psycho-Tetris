@@ -1,26 +1,60 @@
 Grupo:
 Andre Lima - 12/0059908
-yurick Hauschild - 12/0024136
+Yurick Hauschild - 12/0024136
 Mariana Pannunzio - 12/0018276
 
-PSYCHO TETRIS beta
+PSYCHO TETRIS mega beta
 	versão: 1.0
 
 INSTRUÇÕES:
 
-para compilar, tem que verificar que o terminal ja está no diretório correto. Uma vez garantido isso, é só digitar "make.exe" (sem as aspas);
+========================================================================
+	Índice:
+		I) Execução
+			a) Linux
+			b) Windows e outros OS
+		II) Gameplay
+			a) O Objetivo
+			b) Movendo Peças
+			c) Perdendo o jogo
+		III) Bugs conhecidos
+========================================================================
 
-uma vez compilado, digite "./exe" (novamente, sem as aspas)
+	I) Execução
 
-Para rodar o jogo o terminal tem que estar nas dimensões 80X24, caso contrario o jogo mostrará uma mensagem de alerta e não iniciará o jogo.
+		a) Linux
+			Para executar o código em linux, só é preciso encontrar o arquivo já compilado tetris.exe na pasta bin/ e executá-lo.
 
-Uma vez nas dimensões corretas, poderá iniciar o jogo.
+		b) Windows ou outros OS
+			Caso queira jogar em outros Sistemas Operacionais, é possível compilar o código a partir dos arquivos contidos na pasta src/. Para tal, é necessário instalar o ncurses previamente. Para tal, acesse http://www.gnu.org/software/ncurses/ e procure as informações relativas ao seu sistema operacional.
 
-Voce será direcionado para um menu onde poderá selecionar se quer jogar ou não. Para jogar, selecione "Jogar" (use as setas de navegação e tecle enter)
+-------------------------------------------------------------------------
 
-Uma vez iniciado o jogo, poderá orientar a peça com as teclas 'w', 'a', 's' e 'd'. para prender a peça, tecle enter. Para pausar o jogo aperte 'esc'. Para encerrar o jogo rapidamente, tecle 'q';
+	II) Gameplay
 
-Quando o primeiro bloco atingir o limite superior da matriz, o jogo será encerrado.
+		a) O Objetivo
+			O objetivo do jogo é impedir que a pilha de peças alcance o topo da tela. Para isso, o jogador deve combinar as peças de modo a formar linhas completas. Toda linha completa de peças na tela será imediatamente deletada, diminuindo a altura total da pilha de peças.
+
+		b) Movendo Peças
+			Você deve mover peças usando as teclas A, S e D do teclado, que movem a peça para o lado, para baixo e para a direita, respectivamente. A tecla W toda a peça, para que você a posicione na forma que julgar melhor aos seus objetivos.
+
+		c) Perdendo o jogo
+			Você perde o jogo quando sua pilha de peças alcança o topo da tela. A derrota é instantânea, então evite acumular muitas peças!
+
+-------------------------------------------------------------------------
+
+	III) Bugs conhecidos
+
+		a) Movimentação de último momento
+			O jogador deve ser capaz de rearranjar a peça mesmo ela já tendo tocado o fundo da tela/outra peça.
+
+		b) Fim de jogo
+			O fim de jogo não é claro, parecendo que ele verifica a linha errada.
+
+		c) Peças não rodam
+			As peças devem rodar ao se apertar a tecla W.
+
+-------------------------------------------------------------------------
 
 Divirta-se!
 
