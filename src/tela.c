@@ -46,6 +46,19 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 		mvaddstr(i-1, t->x + 2*TELA_LARGURA, "..");
 	}
 
+	for(i=0; i<= TELA_ALTURA/4; ++i)
+	{
+		set_color((i%2)+COR_BORDA);
+		mvaddstr(t->y+i, t->x - TELA_LARGURA-6, "..");
+	}
+
+	for(i=TELA_LARGURA+4; i>=0; i-=2)
+	{
+		set_color(COR_BORDA+1);
+		mvaddstr(t->y -1, t->x - i-2, "..");
+		mvaddstr(t->y + TELA_ALTURA/4, t->x - i-2, "..");
+	}
+
 	set_color(COR_TELA);
 	mvaddstr(t->y/2, t->x + TELA_ALTURA + 3, "Comandos:");
 	mvaddstr(t->y/2 + 1, t->x + TELA_ALTURA + 3, "[A]: Move para a esquerda.");

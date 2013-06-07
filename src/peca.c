@@ -148,7 +148,7 @@ EXT_MOD_PECA Peca* nova_peca (Tela* tela, int x, int y)
 			peca->bloco[3].x = x+2;
 
 			for(i=0;i<4;++i)
-				peca->bloco[i].y = y;
+				peca->bloco[i].y = y+1;
 		}
 		break;
 	}

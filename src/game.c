@@ -28,17 +28,22 @@ int endgame(Tela* t)
 EXT_MOD_GAME void start_game(int difficulty)
 {
 	Tela *tela;
-	Peca *peca;
+	Peca *peca, *prox_peca;
 	int end=0, in;
 	WINDOW* main;
 
 	srand(time(NULL));
 	tela = nova_tela();
 
+	prox_peca = nova_peca(tela, -TELA_LARGURA/2, TELA_ALTURA/8-1);
+
 	while(!end)
 	{
 		clock_t ini;
-		peca = nova_peca(tela, TELA_LARGURA/2 - 1, 0);
+		peca = prox_peca;
+		prox_peca = nova_peca(tela, -TELA_LARGURA/2, TELA_ALTURA/8-1);
+
+		peca_move_x(peca, TELA_LARGURA);
 
 		if(peca_touching(peca, tela, 's'))
 		{
@@ -53,6 +58,7 @@ EXT_MOD_GAME void start_game(int difficulty)
 
 			mostra_tela(tela);
 			mostra_peca(peca);
+			mostra_peca(prox_peca);
 			refresh();
 
 			in = pega_input(1);
