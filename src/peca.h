@@ -10,8 +10,6 @@
 #define SERV_TELA
 #include "tela.h"
 
-#define TOT_PECA_TIPOS 1
-
 /**Estrutura básica de um peça.
 Cada peça deve conter suas próprias coordenadas e as coordenadas de cada um de seus blocos.
 */
@@ -37,5 +35,7 @@ EXT_MOD_PECA void mostra_peca(Peca* p);
 EXT_MOD_PECA void deleta_peca(Peca* p);
 /// Prende a peça no fim da tela.
 EXT_MOD_PECA void prende_peca(Peca* p, Tela* t);
+/// Gira a peça no sentindo identificado no segundo argumento ( '<' ou '>').
+EXT_MOD_PECA void roda_peca(Peca* p, char sentido);
 
 #endif

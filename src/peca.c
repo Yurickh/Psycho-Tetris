@@ -78,6 +78,79 @@ EXT_MOD_PECA Peca* nova_peca (Tela* tela, int x, int y)
 			peca->bloco[2].y = y+1;
 			peca->bloco[3].y = y+1;
 		break;
+
+		case L1:
+			peca->bloco[0].x = x;
+			peca->bloco[1].x = x+1;
+			peca->bloco[2].x = x+1;
+			peca->bloco[3].x = x+1;
+
+			peca->bloco[0].y = y;
+			peca->bloco[1].y = y;
+			peca->bloco[2].y = y+1;
+			peca->bloco[3].y = y+2;
+		break;
+
+		case L2:
+			peca->bloco[0].x = x;
+			peca->bloco[1].x = x+1;
+			peca->bloco[2].x = x;
+			peca->bloco[3].x = x;
+
+			peca->bloco[0].y = y;
+			peca->bloco[1].y = y;
+			peca->bloco[2].y = y+1;
+			peca->bloco[3].y = y+2;
+		break;
+
+		case S1:
+			peca->bloco[0].x = x;
+			peca->bloco[1].x = x;
+			peca->bloco[2].x = x+1;
+			peca->bloco[3].x = x+1;
+
+			peca->bloco[0].y = y;
+			peca->bloco[1].y = y+1;
+			peca->bloco[2].y = y+1;
+			peca->bloco[3].y = y+2;
+		break;
+
+		case S2:
+			peca->bloco[0].x = x+1;
+			peca->bloco[1].x = x;
+			peca->bloco[2].x = x+1;
+			peca->bloco[3].x = x;
+
+			peca->bloco[0].y = y;
+			peca->bloco[1].y = y+1;
+			peca->bloco[2].y = y+1;
+			peca->bloco[3].y = y+2;
+		break;
+
+		case T:
+			peca->bloco[0].x = x;
+			peca->bloco[1].x = x;
+			peca->bloco[2].x = x+1;
+			peca->bloco[3].x = x;
+
+			peca->bloco[0].y = y;
+			peca->bloco[1].y = y+1;
+			peca->bloco[2].y = y+1;
+			peca->bloco[3].y = y+2;
+		break;
+		case I:
+		{
+			int i;
+
+			peca->bloco[0].x = x-1;
+			peca->bloco[1].x = x;
+			peca->bloco[2].x = x+1;
+			peca->bloco[3].x = x+2;
+
+			for(i=0;i<4;++i)
+				peca->bloco[i].y = y;
+		}
+		break;
 	}
 	
 	return peca;
@@ -124,4 +197,8 @@ EXT_MOD_PECA void prende_peca(Peca* p, Tela* t)
 	}
 	for(i=0;i<4;++i)
 		t->bloco[p->bloco[i].y][p->bloco[i].x].tipo = tipo;
+}
+
+EXT_MOD_PECA void roda_peca(Peca* p, char sentido)
+{
 }

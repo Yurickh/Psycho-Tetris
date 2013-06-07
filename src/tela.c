@@ -34,14 +34,14 @@ EXT_MOD_TELA void mostra_tela (Tela* t){
 	
 	for(i=t->x-1; i < 2*TELA_LARGURA+t->x; i+=2)
 	{
-		set_color(8);
+		set_color(COR_BORDA+1);
 		mvaddstr(t->y-1, i, "..");
 		mvaddstr(t->y+1 + TELA_ALTURA-1, i, "..");
 	}
 
 	for(i=t->y; i <= TELA_ALTURA + t->y + 1; ++i)
 	{
-		set_color((i%2)+7);
+		set_color((i%2)+COR_BORDA);
 		mvaddstr(i-1, t->x - 2, "..");
 		mvaddstr(i-1, t->x + 2*TELA_LARGURA, "..");
 	}

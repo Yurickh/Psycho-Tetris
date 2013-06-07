@@ -10,6 +10,7 @@ Define servidor de engine, que sera usada para inicialização do ncurses e reto
 #define EXT_MOD_ENGINE extern
 #endif
 
+#define COR_BORDA 18
 #define COR_TELA 20
 #define STANDARD 0
 

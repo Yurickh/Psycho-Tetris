@@ -9,8 +9,10 @@ Define o servidor de Bloco que sera usado para formar a tela e as peças.*/
 #define EXT_MOD_BLOCO extern
 #endif
 
+#define TOT_PECA_TIPOS 7
+
 typedef enum
-{INVISIVEL, QUADRADO} BlocoTipo;
+{INVISIVEL, QUADRADO, L1, L2, S1, S2, T, I} BlocoTipo;
 
 struct Bloco{
 	int x;
