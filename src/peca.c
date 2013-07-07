@@ -23,9 +23,9 @@ EXT_MOD_PECA int peca_touching (Peca* p, Tela* t, char resp)
 		case 's':
 			for(i = 0; i<4; ++i)
 			{
-				if(t->bloco[p->bloco[i].y + 1][p->bloco[i].x].tipo != INVISIVEL || p->bloco[i].y + 1 >= TELA_ALTURA)
+				if(t->bloco[p->bloco[i].y + p->y + 1][p->bloco[i].x + p->x].tipo != INVISIVEL || p->bloco[i].y + p->y + 1 >= TELA_ALTURA)
 					result++;
-				if(t->bloco[p->bloco[i].y][p->bloco[i].x].tipo != INVISIVEL || p->bloco[i].y < 0)
+				if(t->bloco[p->bloco[i].y + p->y][p->bloco[i].x + p->x].tipo != INVISIVEL || p->bloco[i].y + p->y < 0)
 					result++;
 			}
 		break;
@@ -33,7 +33,7 @@ EXT_MOD_PECA int peca_touching (Peca* p, Tela* t, char resp)
 		case 'a':
 			for (i=0;i<4;++i)
 			{
-				if(t->bloco[p->bloco[i].y][p->bloco[i].x-1].tipo != INVISIVEL || p->bloco[i].x-1 < 0)
+				if(t->bloco[p->bloco[i].y + p->y][p->bloco[i].x-1 + p->x].tipo != INVISIVEL || p->bloco[i].x-1 + p->x < 0)
 					result++;
 			}
 		break;
@@ -41,7 +41,7 @@ EXT_MOD_PECA int peca_touching (Peca* p, Tela* t, char resp)
 		case 'd':
 			for(i=0;i<4;++i)
 			{
-				if(t->bloco[p->bloco[i].y][p->bloco[i].x+1].tipo != INVISIVEL || p->bloco[i].x+1 >= TELA_LARGURA)
+				if(t->bloco[p->bloco[i].y + p->y][p->bloco[i].x+1 + p->x].tipo != INVISIVEL || p->bloco[i].x+1 + p->x >= TELA_LARGURA)
 					result++;
 			}
 		break;
@@ -68,87 +68,87 @@ EXT_MOD_PECA Peca* nova_peca (Tela* tela, int x, int y)
 	switch(tipo)
 	{
 		case QUADRADO:
-			peca->bloco[0].x = x;
-			peca->bloco[1].x = x+1;
-			peca->bloco[2].x = x;
-			peca->bloco[3].x = x+1;
+			peca->bloco[0].x = 0;
+			peca->bloco[1].x = +1;
+			peca->bloco[2].x = 0;
+			peca->bloco[3].x = +1;
 
-			peca->bloco[0].y = y;
-			peca->bloco[1].y = y;
-			peca->bloco[2].y = y+1;
-			peca->bloco[3].y = y+1;
+			peca->bloco[0].y = 0;
+			peca->bloco[1].y = 0;
+			peca->bloco[2].y = 0+1;
+			peca->bloco[3].y = 0+1;
 		break;
 
 		case L1:
-			peca->bloco[0].x = x;
-			peca->bloco[1].x = x+1;
-			peca->bloco[2].x = x+1;
-			peca->bloco[3].x = x+1;
+			peca->bloco[0].x = 0;
+			peca->bloco[1].x = +1;
+			peca->bloco[2].x = +1;
+			peca->bloco[3].x = +1;
 
-			peca->bloco[0].y = y;
-			peca->bloco[1].y = y;
-			peca->bloco[2].y = y+1;
-			peca->bloco[3].y = y+2;
+			peca->bloco[0].y = 0;
+			peca->bloco[1].y = 0;
+			peca->bloco[2].y = +1;
+			peca->bloco[3].y = +2;
 		break;
 
 		case L2:
-			peca->bloco[0].x = x;
-			peca->bloco[1].x = x+1;
-			peca->bloco[2].x = x;
-			peca->bloco[3].x = x;
+			peca->bloco[0].x = 0;
+			peca->bloco[1].x = +1;
+			peca->bloco[2].x = 0;
+			peca->bloco[3].x = 0;
 
-			peca->bloco[0].y = y;
-			peca->bloco[1].y = y;
-			peca->bloco[2].y = y+1;
-			peca->bloco[3].y = y+2;
+			peca->bloco[0].y = 0;
+			peca->bloco[1].y = 0;
+			peca->bloco[2].y = +1;
+			peca->bloco[3].y = +2;
 		break;
 
 		case S1:
-			peca->bloco[0].x = x;
-			peca->bloco[1].x = x;
-			peca->bloco[2].x = x+1;
-			peca->bloco[3].x = x+1;
+			peca->bloco[0].x = 0;
+			peca->bloco[1].x = 0;
+			peca->bloco[2].x = 0+1;
+			peca->bloco[3].x = 0+1;
 
-			peca->bloco[0].y = y;
-			peca->bloco[1].y = y+1;
-			peca->bloco[2].y = y+1;
-			peca->bloco[3].y = y+2;
+			peca->bloco[0].y = 0;
+			peca->bloco[1].y = +1;
+			peca->bloco[2].y = +1;
+			peca->bloco[3].y = +2;
 		break;
 
 		case S2:
-			peca->bloco[0].x = x+1;
-			peca->bloco[1].x = x;
-			peca->bloco[2].x = x+1;
-			peca->bloco[3].x = x;
+			peca->bloco[0].x = +1;
+			peca->bloco[1].x = 0;
+			peca->bloco[2].x = +1;
+			peca->bloco[3].x = 0;
 
-			peca->bloco[0].y = y;
-			peca->bloco[1].y = y+1;
-			peca->bloco[2].y = y+1;
-			peca->bloco[3].y = y+2;
+			peca->bloco[0].y = 0;
+			peca->bloco[1].y = +1;
+			peca->bloco[2].y = +1;
+			peca->bloco[3].y = +2;
 		break;
 
 		case T:
-			peca->bloco[0].x = x;
-			peca->bloco[1].x = x;
-			peca->bloco[2].x = x+1;
-			peca->bloco[3].x = x;
+			peca->bloco[0].x = 0;
+			peca->bloco[1].x = 0;
+			peca->bloco[2].x = 0+1;
+			peca->bloco[3].x = 0;
 
-			peca->bloco[0].y = y;
-			peca->bloco[1].y = y+1;
-			peca->bloco[2].y = y+1;
-			peca->bloco[3].y = y+2;
+			peca->bloco[0].y = 0;
+			peca->bloco[1].y = +1;
+			peca->bloco[2].y = +1;
+			peca->bloco[3].y = +2;
 		break;
 		case I:
 		{
 			int i;
 
-			peca->bloco[0].x = x-1;
-			peca->bloco[1].x = x;
-			peca->bloco[2].x = x+1;
-			peca->bloco[3].x = x+2;
+			peca->bloco[0].x = -1;
+			peca->bloco[1].x = 0;
+			peca->bloco[2].x = +1;
+			peca->bloco[3].x = +2;
 
 			for(i=0;i<4;++i)
-				peca->bloco[i].y = y+1;
+				peca->bloco[i].y = +1;
 		}
 		break;
 	}
@@ -159,20 +159,28 @@ EXT_MOD_PECA Peca* nova_peca (Tela* tela, int x, int y)
 EXT_MOD_PECA void peca_move_x (Peca* peca, int x)
 {
 	peca->x += x;
-	move_blocos_peca(peca, x, 0);
 }
 
 EXT_MOD_PECA void peca_move_y (Peca* peca, int y)
 {
 	peca->y += y;
-	move_blocos_peca(peca, 0, y);
 }
 
 EXT_MOD_PECA void mostra_peca(Peca* p)
 {
 	int i;
 	for(i=0; i<4; ++i)
+	{
+		p->bloco[i].x += p->x;
+		p->bloco[i].y += p->y;
+	}
+	for(i=0; i<4; ++i)
 		mostra_bloco(&(p->bloco[i]));
+	for(i=0;i<4; ++i)
+	{
+		p->bloco[i].x -= p->x;
+		p->bloco[i].y -= p->y;
+	}
 }
 
 EXT_MOD_PECA void deleta_peca(Peca* p)
@@ -196,7 +204,7 @@ EXT_MOD_PECA void prende_peca(Peca* p, Tela* t)
 		wait(30);
 	}
 	for(i=0;i<4;++i)
-		t->bloco[p->bloco[i].y][p->bloco[i].x].tipo = tipo;
+		t->bloco[p->bloco[i].y + p->y][p->bloco[i].x + p->x].tipo = tipo;
 }
 
 EXT_MOD_PECA void roda_peca(Peca* p, char sentido)

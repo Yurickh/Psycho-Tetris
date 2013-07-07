@@ -38,17 +38,19 @@ EXT_MOD_ENGINE void inicializa_ncurses()
 	keypad(stdscr, FALSE);
 
 	start_color();
-	init_pair(1, COLOR_RED, COLOR_BLACK); 	//Quadrado
-	init_pair(2, COLOR_BLUE, COLOR_BLACK); 	//L1 (L)
-	init_pair(3, COLOR_YELLOW, COLOR_BLACK);//L2 (_|)
-	init_pair(4, COLOR_CYAN, COLOR_BLACK); 	//S1 (S)
-	init_pair(5, COLOR_GREEN, COLOR_BLACK);	//S2 (Z)
-	init_pair(6, COLOR_WHITE, COLOR_BLACK); //T
-	init_pair(7, COLOR_MAGENTA, COLOR_BLACK); // I
-	init_pair(18, COLOR_MAGENTA, COLOR_MAGENTA); //Cor_borda 1
-	init_pair(19, COLOR_WHITE, COLOR_WHITE); //Cor_borda 2
-	init_pair(20, COLOR_WHITE, COLOR_BLACK); //Cor padrão
+	init_pair(1, COLOR_RED, COLOR_BLACK); 		//Quadrado
+	init_pair(2, COLOR_BLUE, COLOR_BLACK); 		//L1 (L)
+	init_pair(3, COLOR_YELLOW, COLOR_BLACK);	//L2 (_|)
+	init_pair(4, COLOR_CYAN, COLOR_BLACK); 		//S1 (S)
+	init_pair(5, COLOR_GREEN, COLOR_BLACK);		//S2 (Z)
+	init_pair(6, COLOR_WHITE, COLOR_BLACK); 	//T
+	init_pair(7, COLOR_MAGENTA, COLOR_BLACK); 	// I
+	init_pair(18, COLOR_MAGENTA, COLOR_MAGENTA);//Cor_borda 1
+	init_pair(19, COLOR_WHITE, COLOR_WHITE); 	//Cor_borda 2
+	init_pair(20, COLOR_WHITE, COLOR_BLACK); 	//Cor padrão
 }
+
+//FANÇAUM DE ALINPÁ BÂFÊ flushinp() OXENTE MAI GOD;
 
 EXT_MOD_ENGINE void finaliza_ncurses()
 {
